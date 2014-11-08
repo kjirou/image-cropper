@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=0.10 <0.12"
+  },
   "scripts": {
+    "ci": "mocha",
     "jshint": "jshint index.js lib/image2canvas.js test/tests.js",
     "test": "mocha && npm run jshint"
   },
