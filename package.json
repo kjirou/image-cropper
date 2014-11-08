@@ -1,0 +1,29 @@
+{
+  "name": "image2canvas",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jshint": "jshint index.js lib/image2canvas.js test/tests.js",
+    "test": "mocha && npm run jshint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kjirou/npm-image2canvas.git"
+  },
+  "keywords": [
+    "canvas",
+    "converter",
+    "image"
+  ],
+  "author": "kjirou",
+  "license": "MIT",
+  "bin": {
+    "image2canvas": "./bin/image2canvas"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "2.0.1",
+    "jshint": "2.5.10"
+  }
+}

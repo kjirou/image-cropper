@@ -1,2 +1,2 @@
-npm-image-to-canvas
-===================
+npm-image2canvas
+================
