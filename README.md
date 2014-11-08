@@ -18,7 +18,7 @@ sudo apt-get install imagemagick
 
 Assert ImageMagick is installed:
 ```
-%convert --version
+$convert --version
 Version: ImageMagick 6.8.7-7 Q16 x86_64 2013-11-27 http://www.imagemagick.org
 Copyright: Copyright (C) 1999-2014 ImageMagick Studio LLC
 Features: DPC Modules
