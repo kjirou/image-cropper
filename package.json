@@ -21,9 +21,11 @@
   "bin": {
     "image2canvas": "./bin/image2canvas"
   },
-  "dependencies": {},
+  "dependencies": {
+    "imagemagick": "0.1.3"
+  },
   "devDependencies": {
-    "mocha": "2.0.1",
-    "jshint": "2.5.10"
+    "jshint": "2.5.10",
+    "mocha": "2.0.1"
   }
 }
