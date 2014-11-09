@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kjirou/npm-image-cropper.git"
+    "url": "git://github.com/kjirou/image-cropper.git"
   },
   "keywords": [
     "canvas",
