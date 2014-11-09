@@ -1,5 +1,6 @@
-image2canvas
-============
+image-cropper
+=============
+Divide a large image to small images.
 
 
 ## Preparation

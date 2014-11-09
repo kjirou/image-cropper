@@ -1,11 +1,11 @@
 var assert = require('assert');
 
-var image2canvas = require('../index.js');
+var imageCropper = require('../index.js');
 
 
-describe('image2canvas', function(){
+describe('image-cropper', function(){
 
   it('should be defined', function(){
-    assert(typeof image2canvas === 'object');
+    assert(typeof imageCropper === 'object');
   });
 });

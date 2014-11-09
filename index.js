@@ -1,1 +1,1 @@
-module.exports = require('./lib/image2canvas.js');
+module.exports = require('./lib/image-cropper.js');

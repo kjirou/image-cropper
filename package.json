@@ -1,5 +1,5 @@
 {
-  "name": "image2canvas",
+  "name": "image-cropper",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "scripts": {
     "ci": "mocha",
-    "jshint": "jshint index.js lib/image2canvas.js test/tests.js",
+    "jshint": "jshint index.js lib/image-cropper.js test/tests.js",
     "test": "mocha && npm run jshint"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kjirou/npm-image2canvas.git"
+    "url": "git://github.com/kjirou/npm-image-cropper.git"
   },
   "keywords": [
     "canvas",
@@ -23,7 +23,7 @@
   "author": "kjirou",
   "license": "MIT",
   "bin": {
-    "image2canvas": "./bin/image2canvas"
+    "image-cropper": "./bin/image-cropper"
   },
   "dependencies": {
     "imagemagick": "0.1.3"
