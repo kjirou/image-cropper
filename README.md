@@ -1,6 +1,9 @@
-image-cropper
-=============
-Divide a large image to small images.
+# image-cropper
+
+[![npm version](https://badge.fury.io/js/image-cropper.svg)](http://badge.fury.io/js/image-cropper)
+[![Build Status](https://travis-ci.org/kjirou/image-cropper.svg?branch=master)](https://travis-ci.org/kjirou/image-cropper)
+
+Divide a large image to small images
 
 
 ## Preparation
