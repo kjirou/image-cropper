@@ -1,7 +1,7 @@
 {
   "name": "image-divider",
   "description": "Divide a large image to small images",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "author": "kjirou",
   "bin": {
     "image-divider": "./bin/image-divider"
