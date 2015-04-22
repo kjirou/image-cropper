@@ -9,6 +9,7 @@ var rimraf = require('rimraf');
 var imageDivider = require('../index');
 var crop = imageDivider.crop;
 var divide = imageDivider.divide;
+var utils = imageDivider.utils;
 
 
 var SAMPLE_IMAGE_PATH = pathModule.join(__dirname, '/support/denzi/Denzi140330-12.png');
@@ -58,15 +59,41 @@ describe('image-divider', function(){
         },
         function(next) {
           var createdImageData = fs.readFileSync(pathModule.join(TMP_ROOT, 'signboard.png')).toString('base64');
-          console.log(isInTravisCI());
-          console.log(isInTravisCI());
-          console.log(isInTravisCI());
           if (!isInTravisCI()) {
             assert.strictEqual(createdImageData, SIGNBOARD_IMAGE_DATA);
+          } else {
+            // Travis CI 上で生成した画像が微妙に違い、完全一致できなかった
+            // 大体のサイズで検証する。なお、ローカルで生成したものは 364 だった
+            // ref #2
+            assert(createdImageData.length > 300);
           }
-          next()
+          next();
         }
       ], done);
+    });
+  });
+
+
+  context('utils', function(){
+
+    it('testtestt', function(){
+      //var validate = require('jsonschema').validate;
+      //console.log(validate(4, {"type": "number"}));
+    });
+
+    it('validateConfData', function(){
+      var confData = {
+        images: [
+          { src: './foo.png', pos: [0, 128], size: [16, 16], dest: '/path/to/bar.png' },
+          { src: './foo.png', pos: [0, 128], size: [16, 16], dest: '/path/to/bar.png' }
+        ]
+      };
+      utils.validateConfData(confData);
+
+      confData.images[0].pos[0] = -1;
+      assert.throws(function() {
+        utils.validateConfData(confData);
+      }, /minimum/);
     });
   });
 });

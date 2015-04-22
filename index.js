@@ -4,6 +4,8 @@ var im = require('imagemagick');
 var mkdirp = require('mkdirp');
 var pathModule = require('path');
 
+var utils = require('./lib/utils');
+
 
 /**
  * Generate a imagemagick's parameter of meaning conversion area
@@ -74,5 +76,6 @@ var divide = function divide(settings, callback) {
 
 module.exports = {
   crop: crop,
-  divide: divide
+  divide: divide,
+  utils: utils
 };
