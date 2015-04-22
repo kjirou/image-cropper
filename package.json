@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/kjirou/image-divider",
   "keywords": [
-    "canvas",
-    "converter",
-    "image"
+    "command",
+    "image",
+    "tool"
   ],
   "license": "MIT",
   "main": "index.js",
