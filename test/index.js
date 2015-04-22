@@ -12,7 +12,7 @@ var divide = imageDivider.divide;
 
 
 var SAMPLE_IMAGE_PATH = pathModule.join(__dirname, '/support/denzi/Denzi140330-12.png');
-var SIGNBOARD_IMAGE_DATA = fs.readFileSync(pathModule.join(__dirname, '/support/denzi/signboard.png')).toString();
+var SIGNBOARD_IMAGE_DATA = fs.readFileSync(pathModule.join(__dirname, '/support/denzi/signboard.png')).toString('base64');
 
 var TMP_ROOT = pathModule.join(__dirname, '/tmp');
 function resetTmpDir(callback) {
@@ -53,7 +53,7 @@ describe('image-divider', function(){
           crop(SAMPLE_IMAGE_PATH, [15 * 16, 16], [16, 16], pathModule.join(TMP_ROOT, 'signboard.png'), next);
         },
         function(next) {
-          var createdImageData = fs.readFileSync(pathModule.join(TMP_ROOT, 'signboard.png')).toString();
+          var createdImageData = fs.readFileSync(pathModule.join(TMP_ROOT, 'signboard.png')).toString('base64');
           assert.strictEqual(createdImageData, SIGNBOARD_IMAGE_DATA);
           next()
         }

@@ -28,7 +28,7 @@ function _generateConversionArea(pos, size) {
  */
 var DEFAULT_CONF_FILE_NAME = 'image-divider.js';
 function _requireConf(path) {
-  path = path || pathModule.resolve('./' + DEFAULT_CONF_FILE_NAME);
+  path = path || pathModule.resolve(pathModule.join('./', DEFAULT_CONF_FILE_NAME));
   return require(path);
 }
 
