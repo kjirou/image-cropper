@@ -64,8 +64,13 @@ var crop = function crop(srcImagePath, pos, size, destImagePath, callback) {
   async.series(tasks, callback);
 };
 
-var divide = function divide(settings, callback) {
-  var tasks = settings.map(function(setting) {
+/**
+ * Divide a source image to some small images
+ * @param {array<object>} imageSettings  Pass confData.images
+ * @param {Function} callback (err)
+ */
+var divide = function divide(imageSettings, callback) {
+  var tasks = imageSettings.map(function(setting) {
     return function(next) {
       crop(setting.src, setting.pos, setting.size, setting.dest, next);
     };

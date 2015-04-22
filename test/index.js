@@ -32,27 +32,27 @@ function isInTravisCI() {
 }
 
 
-describe('image-divider', function(){
+describe('image-divider', function() {
 
   var rewiredModule = rewire('../index.js');
   var _generateConversionArea = rewiredModule.__get__('_generateConversionArea');
 
-  it('should be defined', function(){
+  it('should be defined', function() {
     assert.strictEqual(typeof imageDivider, 'object');
   });
 
-  it('_generateConversionArea', function(){
+  it('_generateConversionArea', function() {
     assert.strictEqual(_generateConversionArea([1, 2], [3, 4]), '3x4+2+1');
   });
 
 
-  context('crop', function(){
+  context('crop', function() {
 
     beforeEach(function(done) {
       resetTmpDir(done);
     });
 
-    it('should be', function(done){
+    it('should be', function(done) {
       async.series([
         function(next) {
           crop(SAMPLE_IMAGE_PATH, [15 * 16, 16], [16, 16], pathModule.join(TMP_ROOT, 'signboard.png'), next);
@@ -74,14 +74,45 @@ describe('image-divider', function(){
   });
 
 
-  context('utils', function(){
+  context('divide', function() {
 
-    it('testtestt', function(){
-      //var validate = require('jsonschema').validate;
-      //console.log(validate(4, {"type": "number"}));
+    beforeEach(function(done) {
+      resetTmpDir(done);
     });
 
-    it('validateConfData', function(){
+    it('should be', function(done) {
+      var imageSettings = [{
+        src: SAMPLE_IMAGE_PATH,
+        pos: [15 * 16, 16],
+        size: [16, 16],
+        dest: pathModule.join(TMP_ROOT, 'signboard.png')
+      }, {
+        src: SAMPLE_IMAGE_PATH,
+        pos: [22 * 16, 0],
+        size: [16, 16],
+        dest: pathModule.join(TMP_ROOT, 'fighter.png')
+      }];
+      divide(imageSettings, function(err) {
+        if (err) { return done(err); }
+
+        var signboardImageData = fs.readFileSync(pathModule.join(TMP_ROOT, 'signboard.png')).toString('base64');
+        if (!isInTravisCI()) {
+          assert.strictEqual(signboardImageData, SIGNBOARD_IMAGE_DATA);
+        } else {
+          assert(signboardImageData.length > 300);
+        }
+        var fighterImageData = fs.readFileSync(pathModule.join(TMP_ROOT, 'fighter.png')).toString('base64');
+        assert(fighterImageData.length > 200);
+
+        done();
+      });
+    });
+  });
+
+
+  context('utils', function() {
+
+    it('validateConfData', function() {
       var confData = {
         images: [
           { src: './foo.png', pos: [0, 128], size: [16, 16], dest: '/path/to/bar.png' },
