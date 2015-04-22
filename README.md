@@ -37,7 +37,7 @@ npm install -g image-divider
 
 
 ## Usage
-1) Put a configuration file like this.
+1) Put a configuration file like this
 
 `image-divider.js`:
 ```
@@ -73,5 +73,5 @@ foo/bar/dest
 
 Note:
 - `--conf, -c` option
-  - Path to configuration file
+  - Set a path to configuration file
   - Use `./image-divider.js` if it is not set
