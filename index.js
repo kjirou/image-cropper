@@ -29,7 +29,7 @@ function _generateConversionArea(pos, size) {
  *     }
  */
 var DEFAULT_CONF_FILE_NAME = 'image-divider.js';
-function _requireConf(path) {
+function requireConfFile(path) {
   path = path || pathModule.resolve(pathModule.join('./', DEFAULT_CONF_FILE_NAME));
   return require(path);
 }
@@ -82,5 +82,6 @@ var divide = function divide(imageSettings, callback) {
 module.exports = {
   crop: crop,
   divide: divide,
+  requireConfFile: requireConfFile,
   utils: utils
 };
