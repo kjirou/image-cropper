@@ -1,6 +1,5 @@
 var async = require('async');
 var fs = require('fs');
-var existsSync = fs.accessSync ? fs.accessSync : fs.existsSync;
 var im = require('imagemagick');
 var mkdirp = require('mkdirp');
 var pathModule = require('path');
@@ -9,10 +8,10 @@ var pathModule = require('path');
 /**
  * Generate a imagemagick's parameter of meaning conversion area
  *
- * @return {string} e.g. '32x32+16+96'
+ * @return {string} e.g. '32x32+96+16' = '{width}x{height}+{left}+{top}'
  */
 function _generateConversionArea(pos, size) {
-  return size.join('x') + '+' + pos.join('+');
+  return size.join('x') + '+' + pos.slice().reverse().join('+');
 }
 
 /**
@@ -45,13 +44,13 @@ var crop = function crop(srcImagePath, pos, size, destImagePath, callback) {
 
   // create unexisted directories
   var destImageRoot = pathModule.dirname(pathModule.resolve(destImagePath));
-  if (!existsSync(destImageRoot)) {
+  if (!fs.existsSync(destImageRoot)) {
     tasks.push(function(next) {
       mkdirp(destImageRoot, { mode: 0755 }, next);
     });
   }
 
-  tasks.push(function() {
+  tasks.push(function(next) {
     im.convert([
       srcImagePath,
       '-crop',

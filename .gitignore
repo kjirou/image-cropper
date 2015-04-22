@@ -38,3 +38,4 @@ testem.*.*.*.json
 
 
 .envrc
+test/tmp/
