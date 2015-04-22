@@ -1,1 +1,1 @@
-module.exports = require('./lib/image-cropper.js');
+module.exports = require('./lib/image-divider.js');

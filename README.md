@@ -1,7 +1,7 @@
-# image-cropper
+# image-divider
 
-[![npm version](https://badge.fury.io/js/image-cropper.svg)](http://badge.fury.io/js/image-cropper)
-[![Build Status](https://travis-ci.org/kjirou/image-cropper.svg?branch=master)](https://travis-ci.org/kjirou/image-cropper)
+[![npm version](https://badge.fury.io/js/image-divider.svg)](http://badge.fury.io/js/image-divider)
+[![Build Status](https://travis-ci.org/kjirou/image-divider.svg?branch=master)](https://travis-ci.org/kjirou/image-divider)
 
 Divide a large image to small images
 

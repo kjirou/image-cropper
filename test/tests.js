@@ -1,11 +1,11 @@
 var assert = require('assert');
 
-var imageCropper = require('../index.js');
+var imageDivider = require('../index');
 
 
-describe('image-cropper', function(){
+describe('image-divider', function(){
 
   it('should be defined', function(){
-    assert(typeof imageCropper === 'object');
+    assert(typeof imageDivider === 'object');
   });
 });
