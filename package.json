@@ -1,7 +1,7 @@
 {
   "name": "image-cropper",
   "description": "Divide a large image to small images",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "kjirou",
   "bin": {
     "image-cropper": "./bin/image-cropper"
